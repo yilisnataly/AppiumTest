@@ -1,0 +1,24 @@
+import io.appium.java_client.android.AndroidDriver;
+
+import java.io.File;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
+
+
+public class Appiumcapabilities {
+
+	@Test
+	public void testAppium() {
+		AndroidDriver driver;
+		
+		DesiredCapabilities capability = new DesiredCapabilities();
+				capability.setCapability("deviceName", "ZTE A2016");
+				capability.setCapability("deviceVersion", "5.0.2");
+				capability.setCapability("devicePlatform", "Android");
+				
+				File file = new File("D:\\MyEclipseWorkspaceAppium\\TestProject\\apk\\'com.alibaba.aliexpresshd_v7.10.1-290_Android-4.1.apk");
+				capability.setCapability("app", file.getAbsolutePath());
+		
+	}
+}

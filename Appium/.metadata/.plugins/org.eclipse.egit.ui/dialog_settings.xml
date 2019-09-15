@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\Nataly\git\repository\.git">
+			<item value="false"/>
+			<item value="Yilis Ramirez &lt;yilis.nataly@gmail.com&gt;"/>
+			<item value="&#x0D;&#x0A;&#x0D;&#x0A;Signed-off-by: Yilis Ramirez &lt;yilis.nataly@gmail.com&gt;"/>
+			<item value="Yilis Ramirez &lt;yilis.nataly@gmail.com&gt;"/>
+			<item value="0000000000000000000000000000000000000000"/>
+			<item value="0"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item value="200,200" key="STAGING_SASH_FORM_WEIGHT"/>
+		<item value="false" key="sortItemState"/>
+		<item value="200,200" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
+	</section>
+</section>

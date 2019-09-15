@@ -1,0 +1,60 @@
+import io.appium.java_client.android.AndroidDriver;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openga.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
+
+
+
+public class Appiumcapabilities {
+	
+	AndroidDriver driver;
+
+	@Test
+	public void testAppium() throws MalformedURLException{
+		
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setCapability("deviceName", "ZTE A2016");
+		capability.setCapability("platformVersion", "5.0.2");
+		capability.setCapability("platformName", "Android");
+		capability.setCapability("appWaitActivity", "ee.xxxxx.activity.LandingPageActivity, " + "ee.xxxxx.activity.SplashScreenActivity, ");
+		
+		capability.setCapability(CapabilityType.BROWSER_NAME, "chrome");
+				
+		/*File file = new File("C:\\Users\\Nataly\\eclipse-workspace\\Appium\\TestProject\\apk\\com.contextlogic.wish_v4.34.0-1040_Android-4.4.apk");
+		capability.setCapability("app", file.getAbsolutePath());*/
+		
+		driver = new AndroidDriver(new URL("http://192.168.1.133:4723/wd/hub"), capability);
+		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+		
+		//driver.findElementById("com.android.chrome:id/url_bar").sendKeys("http://www.google.es");
+		
+		Set<String> contexts = driver.getContextHandles();
+		System.out.println(contexts.size());
+		
+		for(String context : contexts) {
+			System.out.println(context);
+		}
+		
+		driver.context("WEBVIEW_1");
+		driver.get("http://www.google.es");
+						
+	}
+	
+	@AfterTest
+	public void afterTest() throws InterruptedException {
+		Thread.sleep(5000);
+		driver.quit();
+	}
+	
+}
+	
+
